@@ -38,7 +38,7 @@ let handler = async (m, { conn, args, command }) => {
   );
 };
 
-handler.help = ["totalfitur"];
+handler.help = ["help"];
 handler.tags = ["info"];
 handler.command = /^(menu|help|co)$/i;
 export default handler;

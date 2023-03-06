@@ -9,9 +9,9 @@ import fetch from "node-fetch";
 
 const defaultMenu = {
   before: ` `.trimStart(),
-  header: "⃟⃟☰⃟⃟ᭁ═━┈━┈༓ *%category* ",
+  header: "⃟⃟☰⃟⃟═━┈━┈༓ *%category* ",
   body: `┆➨ %cmd %isPremium %islimit`,
-  footer: `⃟⃟⃟⃟࿑⃟⃟⃟࿐═┈༓᭄༤\n`,
+  footer: `⃟⃟⃟⃟࿑⃟⃟⃟࿐═┈༓\n`,
   after: ` `,
 };
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
@@ -135,99 +135,99 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
   let teks = `${args[0]}`.toLowerCase();
   let arrayMenu = [
     "all",
-    "anime",
+    // "anime",
     "update",
-    "maker",
-    "edukasi",
-    "news",
+    // "maker",
+    // "edukasi",
+    // "news",
     "random",
-    "game",
+    // "game",
     "xp",
-    "islamic",
-    "stiker",
-    "rpg",
-    "kerangajaib",
-    "quotes",
-    "admin",
-    "group",
-    "premium",
-    "internet",
-    "anonymous",
-    "nulis",
-    "downloader",
-    "tools",
-    "fun",
-    "database",
+    // "islamic",
+    // "stiker",
+    // "rpg",
+    // "kerangajaib",
+    // "quotes",
+    // "admin",
+    // "group",
+    // "premium",
+    // "internet",
+    // "anonymous",
+    // "nulis",
+    // "downloader",
+    // "tools",
+    // "fun",
+    // "database",
     "quran",
-    "vote",
-    "nsfw",
-    "audio",
-    "jadibot",
+    // "vote",
+    // "nsfw",
+    // "audio",
+    // "jadibot",
     "info",
     "owner",
-    "store",
-    "virus",
-    "thnks",
+    // "store",
+    // "virus",
+    // "thnks",
   ];
   if (!arrayMenu.includes(teks)) teks = "404";
   if (teks == "all")
     tags = {
       main: "Main",
-      game: "Game",
-      rpg: "RPG Games",
+      // game: "Game",
+      // rpg: "RPG Games",
       xp: "Exp & Limit",
-      sticker: "Sticker",
-      kerang: "Kerang Ajaib",
-      quotes: "Quotes",
+      // sticker: "Sticker",
+      // kerang: "Kerang Ajaib",
+      // quotes: "Quotes",
       fun: "Fun",
-      anime: "Anime",
-      admin: "Admin",
-      group: "Group",
-      vote: "Voting",
-      absen: "Absen",
-      edukasi: "Edukasi",
-      premium: "Premium",
-      anonymous: "Anonymous Chat",
-      internet: "Internet",
-      downloader: "Downloader",
-      tools: "Tools",
-      nulis: "MagerNulis & Logo",
-      audio: "Audio",
-      maker: "Maker",
-      database: "Database",
+      // anime: "Anime",
+      // admin: "Admin",
+      // group: "Group",
+      // vote: "Voting",
+      // absen: "Absen",
+      // edukasi: "Edukasi",
+      // premium: "Premium",
+      // anonymous: "Anonymous Chat",
+      // internet: "Internet",
+      // downloader: "Downloader",
+      // tools: "Tools",
+      // nulis: "MagerNulis & Logo",
+      // audio: "Audio",
+      // maker: "Maker",
+      // database: "Database",
       quran: "Al Qur'an",
       owner: "Owner",
-      host: "Host",
-      advanced: "Advanced",
-      info: "Info",
-      store: "Store Menu",
-      virus: "𐐪-〚 Virtex 〛-𐑂",
-      thnks: "Thanks To",
+      // host: "Host",
+      // advanced: "Advanced",
+      // info: "Info",
+      // store: "Store Menu",
+      // virus: "𐐪-〚 Virtex 〛-𐑂",
+      // thnks: "Thanks To",
     };
-  if (teks == "game")
-    tags = {
-      game: "Game",
-    };
-  if (teks == "anime")
-    tags = {
-      anime: "Anime",
-    };
-  if (teks == "nsfw")
-    tags = {
-      nsfw: "Nsfw",
-    };
-  if (teks == "rpg")
-    tags = {
-      rpg: "Rpg",
-    };
-  if (teks == "edukasi")
-    tags = {
-      edukasi: "Edukasi",
-    };
-  if (teks == "news")
-    tags = {
-      news: "News",
-    };
+  // if (teks == "game")
+  //   tags = {
+  //     game: "Game",
+  //   };
+  // if (teks == "anime")
+  //   tags = {
+  //     anime: "Anime",
+  //   };
+  // if (teks == "nsfw")
+  //   tags = {
+  //     nsfw: "Nsfw",
+  //   };
+  // if (teks == "rpg")
+  //   tags = {
+  //     rpg: "Rpg",
+  //   };
+  // if (teks == "edukasi")
+  //   tags = {
+  //     edukasi: "Edukasi",
+  //   };
+  // if (teks == "news")
+  //   tags = {
+  //     news: "News",
+  //   };
   if (teks == "random")
     tags = {
       random: "Random",
@@ -236,82 +236,82 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
     tags = {
       xp: "Exp & Limit",
     };
-  if (teks == "stiker")
-    tags = {
-      sticker: "Stiker",
-    };
-  if (teks == "kerangajaib")
-    tags = {
-      kerang: "Kerang Ajaib",
-    };
-  if (teks == "quotes")
-    tags = {
-      quotes: "Quotes",
-    };
+  // if (teks == "stiker")
+  //   tags = {
+  //     sticker: "Stiker",
+  //   };
+  // if (teks == "kerangajaib")
+  //   tags = {
+  //     kerang: "Kerang Ajaib",
+  //   };
+  // if (teks == "quotes")
+  //   tags = {
+  //     quotes: "Quotes",
+  //   };
   if (teks == "admin")
     tags = {
       admin: `Admin ${global.opts["restrict"] ? "" : "(Dinonaktifkan)"}`,
       group: "Grup",
     };
-  if (teks == "group")
-    tags = {
-      group: "Group",
-    };
-  if (teks == "premium")
-    tags = {
-      premium: "Premium",
-    };
-  if (teks == "internet")
-    tags = {
-      internet: "Internet",
-    };
-  if (teks == "anonymous")
-    tags = {
-      anonymous: "Anonymous Chat",
-    };
-  if (teks == "nulis")
-    tags = {
-      nulis: "Nulis",
-      maker: "Maker",
-    };
-  if (teks == "downloader")
-    tags = {
-      downloader: "Downloader",
-    };
-  if (teks == "tools")
-    tags = {
-      tools: "Tools",
-    };
+  // if (teks == "group")
+  //   tags = {
+  //     group: "Group",
+  //   };
+  // if (teks == "premium")
+  //   tags = {
+  //     premium: "Premium",
+  //   };
+  // if (teks == "internet")
+  //   tags = {
+  //     internet: "Internet",
+  //   };
+  // if (teks == "anonymous")
+  //   tags = {
+  //     anonymous: "Anonymous Chat",
+  //   };
+  // if (teks == "nulis")
+  //   tags = {
+  //     nulis: "Nulis",
+  //     maker: "Maker",
+  //   };
+  // if (teks == "downloader")
+  //   tags = {
+  //     downloader: "Downloader",
+  //   };
+  // if (teks == "tools")
+  //   tags = {
+  //     tools: "Tools",
+  //   };
   if (teks == "fun")
     tags = {
       fun: "Fun",
     };
-  if (teks == "database")
-    tags = {
-      database: "Database",
-    };
-  if (teks == "vote")
-    tags = {
-      vote: "Voting",
-      absen: "Absen",
-    };
-  if (teks == "absen")
-    tags = {
-      absen: "Absen",
-    };
+  // if (teks == "database")
+  //   tags = {
+  //     database: "Database",
+  //   };
+  // if (teks == "vote")
+  //   tags = {
+  //     vote: "Voting",
+  //     absen: "Absen",
+  //   };
+  // if (teks == "absen")
+  //   tags = {
+  //     absen: "Absen",
+  //   };
   if (teks == "quran")
     tags = {
       quran: "Al-Qur'an",
       islamic: "Islamic",
     };
-  if (teks == "audio")
-    tags = {
-      audio: "Audio",
-    };
-  if (teks == "jadibot")
-    tags = {
-      jadibot: "Jadi Bot",
-    };
+  // if (teks == "audio")
+  //   tags = {
+  //     audio: "Audio",
+  //   };
+  // if (teks == "jadibot")
+  //   tags = {
+  //     jadibot: "Jadi Bot",
+  //   };
   if (teks == "info")
     tags = {
       info: "Info",
@@ -319,37 +319,37 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
   if (teks == "owner")
     tags = {
       owner: "Owner",
-      host: "Host",
-      advanced: "Advanced",
+      // host: "Host",
+      // advanced: "Advanced",
     };
-  if (teks == "nsfw")
-    tags = {
-      nsfw: "Nsfw",
-    };
-  if (teks == "edukasi")
-    tags = {
-      edukasi: "Edukasi",
-    };
-  if (teks == "quotes")
-    tags = {
-      quotes: "Quotes",
-    };
-  if (teks == "maker")
-    tags = {
-      maker: "Maker",
-    };
-  if (teks == "store")
-    tags = {
-      store: "Store Menu",
-    };
-  if (teks == "virus")
-    tags = {
-      virus: "𐐪-〚 Virtex 〛-𐑂",
-    };
-  if (teks == "thnks")
-    tags = {
-      thnks: "𐐪-〚 Thanks To 〛-𐑂",
-    };
+  // if (teks == "nsfw")
+  //   tags = {
+  //     nsfw: "Nsfw",
+  //   };
+  // if (teks == "edukasi")
+  //   tags = {
+  //     edukasi: "Edukasi",
+  //   };
+  // if (teks == "quotes")
+  //   tags = {
+  //     quotes: "Quotes",
+  //   };
+  // if (teks == "maker")
+  //   tags = {
+  //     maker: "Maker",
+  //   };
+  // if (teks == "store")
+  //   tags = {
+  //     store: "Store Menu",
+  //   };
+  // if (teks == "virus")
+  //   tags = {
+  //     virus: "𐐪-〚 Virtex 〛-𐑂",
+  //   };
+  // if (teks == "thnks")
+  //   tags = {
+  //     thnks: "𐐪-〚 Thanks To 〛-𐑂",
+  //   };
   try {
     // DEFAULT MENU
     let dash = global.dashmenu;
@@ -387,123 +387,123 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
           {
             title: `⫹🗒️ › ${emot}〚 All Menu 〛-𐑂`,
             rowId: ".? all",
-            description: "╰► Menampilkan Seluruh Command SasukeBotz",
+            description: "╰► Menampilkan Seluruh Command Neutron Bot",
           },
-          {
-            title: `⫹🌱 › ${emot}〚 Rpg 〛-𐑂`,
-            rowId: ".? rpg",
-            description: "╰► Calon anak petualang nih... -𐑂",
-          },
-          {
-            title: `⫹✨ › ${emot}〚 Exp 〛-𐑂`,
-            rowId: ".? xp",
-            description: "╰► Kalau dah level 100 dapat hadiah (≧▽≦)",
-          },
-          {
-            title: `⫹🎮 › ${emot}〚 Game 〛-𐑂`,
-            rowId: ".? game",
-            description: "╰► Bg kamu main game apa?.... >-<",
-          },
+          // {
+          //   title: `⫹🌱 › ${emot}〚 Rpg 〛-𐑂`,
+          //   rowId: ".? rpg",
+          //   description: "╰► Calon anak petualang nih... -𐑂",
+          // },
+          // {
+          //   title: `⫹✨ › ${emot}〚 Exp 〛-𐑂`,
+          //   rowId: ".? xp",
+          //   description: "╰► Kalau dah level 100 dapat hadiah (≧▽≦)",
+          // },
+          // {
+          //   title: `⫹🎮 › ${emot}〚 Game 〛-𐑂`,
+          //   rowId: ".? game",
+          //   description: "╰► Bg kamu main game apa?.... >-<",
+          // },
           {
             title: `⫹🧩 › ${emot}〚 Fun 〛-𐑂`,
             rowId: ".? fun",
             description: "╰► Gabut ya bang?",
           },
-          {
-            title: `⫹🐚 › ${emot}〚 Kerang 〛-𐑂`,
-            rowId: ".? kerangajaib",
-            description: "╰► Mau tanya apa sih bg?...",
-          },
-          {
-            title: `⫹📑 › ${emot}〚 Quotes 〛-𐑂`,
-            rowId: ".? quotes",
-            description: "╰► Ada yg mau nyari topik nih... >-<",
-          },
-          {
-            title: `⫹⛩️ › ${emot}〚 Anime 〛-𐑂`,
-            rowId: ".? anime",
-            description: "╰► Lah, Wibuu...-𐑂",
-          },
-          {
-            title: `⫹🔞 › ${emot}〚 Nsfw 〛-𐑂`,
-            rowId: ".? nsfw",
-            description: "╰► Anak kecil ga boleh ya....",
-          },
-          {
-            title: `⫹📚 › ${emot}〚 Edukasi 〛-𐑂`,
-            rowId: ".? edukasi",
-            description: "╰► Belajar edukasi dari fitur bot...",
-          },
-          {
-            title: `⫹🌟 › ${emot}〚 Premium 〛-𐑂`,
-            rowId: ".? premium",
-            description: "╰► Hanya khusus users premium...",
-          },
-          {
-            title: `⫹🎭 › ${emot}〚 Anonymous chat 〛-𐑂`,
-            rowId: ".? anonymous",
-            description: "╰► Mau ngomong sama mantan kah? >.<",
-          },
+          // {
+          //   title: `⫹🐚 › ${emot}〚 Kerang 〛-𐑂`,
+          //   rowId: ".? kerangajaib",
+          //   description: "╰► Mau tanya apa sih bg?...",
+          // },
+          // {
+          //   title: `⫹📑 › ${emot}〚 Quotes 〛-𐑂`,
+          //   rowId: ".? quotes",
+          //   description: "╰► Ada yg mau nyari topik nih... >-<",
+          // },
+          // {
+          //   title: `⫹⛩️ › ${emot}〚 Anime 〛-𐑂`,
+          //   rowId: ".? anime",
+          //   description: "╰► Lah, Wibuu...-𐑂",
+          // },
+          // {
+          //   title: `⫹🔞 › ${emot}〚 Nsfw 〛-𐑂`,
+          //   rowId: ".? nsfw",
+          //   description: "╰► Anak kecil ga boleh ya....",
+          // },
+          // {
+          //   title: `⫹📚 › ${emot}〚 Edukasi 〛-𐑂`,
+          //   rowId: ".? edukasi",
+          //   description: "╰► Belajar edukasi dari fitur bot...",
+          // },
+          // {
+          //   title: `⫹🌟 › ${emot}〚 Premium 〛-𐑂`,
+          //   rowId: ".? premium",
+          //   description: "╰► Hanya khusus users premium...",
+          // },
+          // {
+          //   title: `⫹🎭 › ${emot}〚 Anonymous chat 〛-𐑂`,
+          //   rowId: ".? anonymous",
+          //   description: "╰► Mau ngomong sama mantan kah? >.<",
+          // },
           {
             title: `⫹☪️ › ${emot}〚 Islamic 〛-𐑂`,
             rowId: ".? quran",
             description: "╰► Tumben Banget...",
           },
-          {
-            title: `⫹🌐 › ${emot}〚 Internet 〛-𐑂`,
-            rowId: ".? internet",
-            description: "╰► Ga ada google ya kak...",
-          },
-          {
-            title: `⫹📤️ › ${emot}〚 Downloader 〛-𐑂`,
-            rowId: ".? downloader",
-            description: "╰► Jangan download yg aneh-aneh, Xixixi (≧▽≦)",
-          },
-          {
-            title: `⫹🃏 › ${emot}〚 Stikers 〛-𐑂`,
-            rowId: ".? stiker",
-            description: "╰► Kalau bikin sticker jangan di spam ya kak...",
-          },
-          {
-            title: `⫹✏️ › ${emot}〚 Nulis 〛-𐑂`,
-            rowId: ".? nulis",
-            description: "╰► Hati-hati ke tawan bu sri...",
-          },
-          {
-            title: `⫹🎵 › ${emot}〚 Audio 〛-𐑂`,
-            rowId: ".? audio",
-            description: "╰► Calon remixer nih haha ></",
-          },
-          {
-            title: `⫹🎶 › ${emot}〚 Sound 〛-𐑂`,
-            rowId: ".soundmenu",
-            description: "╰► dengerin lagu nih haha ></",
-          },
-          {
-            title: `⫹🎦 › ${emot}〚 Preset AM 〛-𐑂`,
-            rowId: ".presetmenu",
-            description: "╰► Mau Ngedit Ya ></",
-          },
-          {
-            title: `⫹🦄 › ${emot}〚 Group 〛-𐑂`,
-            rowId: ".? group",
-            description: "╰► Menu settingan buat group mu kak -??",
-          },
-          {
-            title: `⫹👑 › ${emot}〚 Admin 〛-𐑂`,
-            rowId: ".? admin",
-            description: "╰► Yg bukan admin jangan make fitur ini >-<",
-          },
-          {
-            title: `⫹🗃️️ › ${emot}〚 Database 〛-𐑂`,
-            rowId: ".? database",
-            description: "╰► Simpen apa tuh.... >.<",
-          },
-          {
-            title: `⫹🧰️ › ${emot}〚 Tools 〛-𐑂`,
-            rowId: ".? tools",
-            description: "╰► Butuh apa aja bot akan bantu -𐑂",
-          },
+          // {
+          //   title: `⫹🌐 › ${emot}〚 Internet 〛-𐑂`,
+          //   rowId: ".? internet",
+          //   description: "╰► Ga ada google ya kak...",
+          // },
+          // {
+          //   title: `⫹📤️ › ${emot}〚 Downloader 〛-𐑂`,
+          //   rowId: ".? downloader",
+          //   description: "╰► Jangan download yg aneh-aneh, Xixixi (≧▽≦)",
+          // },
+          // {
+          //   title: `⫹🃏 › ${emot}〚 Stikers 〛-𐑂`,
+          //   rowId: ".? stiker",
+          //   description: "╰► Kalau bikin sticker jangan di spam ya kak...",
+          // },
+          // {
+          //   title: `⫹✏️ › ${emot}〚 Nulis 〛-𐑂`,
+          //   rowId: ".? nulis",
+          //   description: "╰► Hati-hati ke tawan bu sri...",
+          // },
+          // {
+          //   title: `⫹🎵 › ${emot}〚 Audio 〛-𐑂`,
+          //   rowId: ".? audio",
+          //   description: "╰► Calon remixer nih haha ></",
+          // },
+          // {
+          //   title: `⫹🎶 › ${emot}〚 Sound 〛-𐑂`,
+          //   rowId: ".soundmenu",
+          //   description: "╰► dengerin lagu nih haha ></",
+          // },
+          // {
+          //   title: `⫹🎦 › ${emot}〚 Preset AM 〛-𐑂`,
+          //   rowId: ".presetmenu",
+          //   description: "╰► Mau Ngedit Ya ></",
+          // },
+          // {
+          //   title: `⫹🦄 › ${emot}〚 Group 〛-𐑂`,
+          //   rowId: ".? group",
+          //   description: "╰► Menu settingan buat group mu kak -??",
+          // },
+          // {
+          //   title: `⫹👑 › ${emot}〚 Admin 〛-𐑂`,
+          //   rowId: ".? admin",
+          //   description: "╰► Yg bukan admin jangan make fitur ini >-<",
+          // },
+          // {
+          //   title: `⫹🗃️️ › ${emot}〚 Database 〛-𐑂`,
+          //   rowId: ".? database",
+          //   description: "╰► Simpen apa tuh.... >.<",
+          // },
+          // {
+          //   title: `⫹🧰️ › ${emot}〚 Tools 〛-𐑂`,
+          //   rowId: ".? tools",
+          //   description: "╰► Butuh apa aja bot akan bantu -𐑂",
+          // },
           {
             title: `️️⫹📊️ › ${emot}〚 Info 〛-𐑂`,
             rowId: ".? info",
@@ -512,69 +512,74 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
           {
             title: `⫹👩‍💻 › ${emot}〚 Owner 〛-𐑂`,
             rowId: ".? owner",
-            description:
-              "╰► Yg bukan developer SasukeBotz gausah nge klik fitur ini !",
+            description: "╰► Bukan developer Neutron Bot dilarang mencet ini !",
           },
-          {
-            title: `⫹🎨 › ${emot}〚 Maker 〛-𐑂`,
-            rowId: ".? maker",
-            description: "╰► Bikin logo apa ya enaknya?",
-          },
-          {
-            title: `⫹💌 › ${emot}〚 Store 〛-𐑂`,
-            rowId: ".? store",
-            description: "╰► Anak jebeh ya kamu kak?",
-          },
-          {
-            title: `⫹🔥 › ${emot}〚 Virtex 〛-𐑂`,
-            rowId: ".? virus",
-            description: "╰► Jangan kak bahaya -𐑂",
-          },
+          // {
+          //   title: `⫹🎨 › ${emot}〚 Maker 〛-𐑂`,
+          //   rowId: ".? maker",
+          //   description: "╰► Bikin logo apa ya enaknya?",
+          // },
+          // {
+          //   title: `⫹💌 › ${emot}〚 Store 〛-𐑂`,
+          //   rowId: ".? store",
+          //   description: "╰► Anak jebeh ya kamu kak?",
+          // },
+          // {
+          //   title: `⫹🔥 › ${emot}〚 Virtex 〛-𐑂`,
+          //   rowId: ".? virus",
+          //   description: "╰► Jangan kak bahaya -𐑂",
+          // },
         ],
       },
       {
         title: `⃟⟣⟚⟝ ⟡ Support Me ${namebot} ⟡ ⟞⟚⟢⃟`,
         rows: [
+          // {
+          //   title: `🔖 ${emot} SEWA`,
+          //   rowId: ".sewa",
+          //   description: "Menampilkan list harga sewa SasukeBotz",
+          // },
+          // {
+          //   title: `🌟 ${emot} BUY PREMIUM`,
+          //   rowId: ".premium",
+          //   description: "Menampilkan list harga premium",
+          // },
           {
-            title: `🔖 ${emot} SEWA`,
-            rowId: ".sewa",
-            description: "Menampilkan list harga sewa SasukeBotz",
-          },
-          {
-            title: `🌟 ${emot} BUY PREMIUM`,
-            rowId: ".premium",
-            description: "Menampilkan list harga premium",
-          },
-          {
-            title: `💹 ${emot} DONASI`,
+            title: `💸 ${emot} DONASI`,
             rowId: ".donasi",
-            description: "Support BOT agar lebih fast respon",
+            description: "Support BOT agar lebih fast response",
           },
         ],
       },
     ];
 
-    const altSection = {
-      title: `List Command ${namebot}`,
-      rows: [
-        {
-          title: "```/help | /menu```",
-          description: "Menampilkan detail bot dan semua command dari bot",
-        },
-        {
-          title: "```/ai | /openai```",
-          description: "Bertanya apa saja kepada AI",
-        },
-        {
-          title: "```/img```",
-          description: "Membuat gambar dari teks",
-        },
-        {
-          title: "```/report```",
-          description: "Melaporkan error/bug",
-        },
-      ],
-    };
+    const altSections = [
+      {
+        title: `List Command ${namebot}`,
+        rows: [
+          {
+            title: "```/help | /menu```",
+            rowId: ".help",
+            description: "Menampilkan detail bot dan semua command dari bot",
+          },
+          {
+            title: "```/ai | /openai```",
+            rowId: ".ai",
+            description: "Bertanya apa saja kepada AI",
+          },
+          {
+            title: "```/img```",
+            rowId: ".img",
+            description: "Membuat gambar dari teks",
+          },
+          {
+            title: "```/report```",
+            rowId: ".report",
+            description: "Melaporkan error/bug",
+          },
+        ],
+      },
+    ];
 
     let psan = "bagaimana kabarmu?";
     let usrs = db.data.users[m.sender];
@@ -649,10 +654,7 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
         : "Free User"
     }
 ╰╴╴╴╳
-▎▍▌▋▊▍▋▍▌▌▌▋▍▎▎▍▍▎▎▎▎▍
-╭╴╴╼╳
-│◇ Aʟʟ Fɪᴛᴜʀ: 2
-╰╸╳`;
+▎▍▌▋▊▍▋▍▌▌▌▋▍▎▎▍▍▎▎▎▎▍`;
     let hariRayaramadan = new Date("April 21, 2023 23:59:59");
     let sekarangg = new Date().getTime();
     let lebih = hariRayaramadan - sekarangg;
@@ -671,12 +673,12 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
     let fot = `Nᴏᴛᴇ!! : Jika Menemukan Bug/Error\nBisa Report Dengan Cara ▻ ketik #report 
 `;
     const listMessage = {
-      text: con + tett,
+      text: tett,
       footer: fot,
       mentions: await conn.parseMention(con),
       title: con,
       buttonText: `CLICK HERE ⎙`,
-      altSection,
+      sections,
     };
     if (teks == "404") {
       return conn.sendMessage(m.chat, listMessage, {
@@ -895,29 +897,29 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
       mangkane40,
     ])}`;
     let audio = `./mp3/loading.opus`;
-    await conn.sendFile(m.chat, audio, "araa.mp3", null, m, true, {
-      type: "audioMessage",
-      ptt: false,
-      seconds: 0,
-      contextInfo: {
-        externalAdReply: {
-          showAdAttribution: true,
-          mediaUrl: sgc,
-          mediaType: 2,
-          description: sgc,
-          title: "「 𝕠𝕗𝕗𝕚𝕔𝕚𝕒𝕝 」𝐒𝐚𝐬𝐮𝐤𝐞 𝐁𝐨𝐭",
-          body: wm,
-          thumbnail: await (
-            await fetch("https://telegra.ph/file/2bf9c8e756c51d93738df.jpg")
-          ).buffer(),
-          sourceUrl: sgc,
-          /*   sourceUrl: sig,
-           title: '◄⟬ ●━━━ ⧏ ⧎ ⧐ ━━━● ⟭►',  
-            body: 'Now Playing...', 
-           thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer()*/
-        },
-      },
-    });
+    //     await conn.sendFile(m.chat, audio, "araa.mp3", null, m, true, {
+    //       type: "audioMessage",
+    //       ptt: false,
+    //       seconds: 0,
+    //       contextInfo: {
+    //         externalAdReply: {
+    //           showAdAttribution: true,
+    //           // mediaUrl: sgc,
+    //           mediaType: 2,
+    //           description: "By Arya Sukresno",
+    //           title: "「 𝗡𝗲𝘂𝘁𝗿𝗼𝗻 𝗕𝗼𝘁 」",
+    //           body: wm,
+    //           thumbnail: await (
+    //             await fetch("https://telegra.ph/file/2bf9c8e756c51d93738df.jpg")
+    //           ).buffer(),
+    //           sourceUrl: sgc,
+    //           /*   sourceUrl: sig,
+    //            title: '◄⟬ ●━━━ ⧏ ⧎ ⧐ ━━━● ⟭►',
+    //             body: 'Now Playing...',
+    //            thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer()*/
+    //         },
+    //       },
+    //     });
 
     //------------------ menuny
     let ownernya = `@${nomorown.split`@`[0]}`;
@@ -1032,11 +1034,12 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
           buttonText: { displayText: _0x187932(0x1bb) },
           type: 0x1,
         },
-        {
-          buttonId: _0x187932(0x1c5),
-          buttonText: { displayText: _0x187932(0x1c0) },
-          type: 0x1,
-        },
+        // Premium
+        // {
+        //   buttonId: _0x187932(0x1c5),
+        //   buttonText: { displayText: _0x187932(0x1c0) },
+        //   type: 0x1,
+        // },
         {
           buttonId: _0x187932(0x1c6),
           buttonText: { displayText: "Donasi" },
