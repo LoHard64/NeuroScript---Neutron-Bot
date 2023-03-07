@@ -149,7 +149,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
     // "kerangajaib",
     // "quotes",
     // "admin",
-    // "group",
+    "group",
     // "premium",
     // "internet",
     // "anonymous",
@@ -182,7 +182,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       fun: "Fun",
       // anime: "Anime",
       // admin: "Admin",
-      // group: "Group",
+      group: "Group",
       // vote: "Voting",
       // absen: "Absen",
       // edukasi: "Edukasi",
@@ -253,10 +253,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
       admin: `Admin ${global.opts["restrict"] ? "" : "(Dinonaktifkan)"}`,
       group: "Grup",
     };
-  // if (teks == "group")
-  //   tags = {
-  //     group: "Group",
-  //   };
+  if (teks == "group")
+    tags = {
+      group: "Group",
+    };
   // if (teks == "premium")
   //   tags = {
   //     premium: "Premium",
@@ -484,11 +484,11 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
           //   rowId: ".presetmenu",
           //   description: "╰► Mau Ngedit Ya ></",
           // },
-          // {
-          //   title: `⫹🦄 › ${emot}〚 Group 〛-𐑂`,
-          //   rowId: ".? group",
-          //   description: "╰► Menu settingan buat group mu kak -??",
-          // },
+          {
+            title: `⫹🦄 › ${emot}〚 Group 〛-𐑂`,
+            rowId: ".? group",
+            description: "╰► Menu settingan buat group mu kak -??",
+          },
           // {
           //   title: `⫹👑 › ${emot}〚 Admin 〛-𐑂`,
           //   rowId: ".? admin",

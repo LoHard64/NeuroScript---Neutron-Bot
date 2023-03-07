@@ -1107,9 +1107,9 @@ Fitur ini di *disable* !`,
   if (msg)
     return conn.sendButton(
       m.chat,
-      danied,
+      denied,
       msg,
-      `${imgr + "Accses Danied"}`,
+      `${imgr + "Access Denied"}`,
       [
         ["MENU", ".menu"],
         ["OWNER", ".menu"],

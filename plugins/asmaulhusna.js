@@ -1,725 +1,1226 @@
 const contoh = `*Asmaul Husna*
 
-`
+`;
 // data here
 const anjuran = `
 
 Dari Abu hurarirah radhiallahu anhu, Rasulullah Saw bersabda: "إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"
-Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`
+Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`;
 
 let handler = async (m, { args, usedPrefix, command }) => {
-    let json = JSON.parse(JSON.stringify(global.asmaulhusna))
-    let data = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
-    if (isNaN(args[0])) throw `contoh:\n${usedPrefix + command} 1`
-    if (args[0]) {
-        if (args[0] < 1 || args[0] > 99) throw `minimal 1 & maksimal 99!`
-        let { index, latin, arabic, translation_id, translation_en } = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''))
-        return m.reply(`No. ${index}
-${arabic}
-${latin}
-${translation_id}
-${translation_en}
-`.trim())
-    }
-    m.reply(contoh + data + anjuran)
-}
-handler.help = ['asmaulhusna [1-99]']
-handler.tags = ['quran']
-handler.command = /^(asmaul(husna)?)$/i
-export default handler
+  //   let json = JSON.parse(JSON.stringify(global.asmaulhusna));
+  //   let data = json
+  //     .map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`)
+  //     .join("\n\n");
+  //   if (isNaN(args[0])) throw `contoh:\n${usedPrefix + command} 1`;
+  //   if (args[0]) {
+  //     if (args[0] < 1 || args[0] > 99) throw `minimal 1 & maksimal 99!`;
+  //     let { index, latin, arabic, translation_id, translation_en } = json.find(
+  //       (v) => v.index == args[0].replace(/[^0-9]/g, "")
+  //     );
+  //     return m.reply(
+  //       `No. ${index}
+  // ${arabic}
+  // ${latin}
+  // ${translation_id}
+  // ${translation_en}
+  // `.trim()
+  //     );
+  //   }
+  m.reply(global.asmaulhusna99);
+};
+handler.help = ["asmaulhusna [1-99]"];
+handler.tags = ["quran"];
+handler.command = /^(asmaul(husna)?99)$/i;
+export default handler;
 
-global.asmaulhusna = [
-    {
-        index: 1,
-        latin: "Ar Rahman",
-        arabic: "الرَّحْمَنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemurah",
-        translation_en: "The All Beneficent"
-    },
-    {
-        index: 2,
-        latin: "Ar Rahiim",
-        arabic: "الرَّحِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Penyayang",
-        translation_en: "The Most Merciful"
-    },
-    {
-        index: 3,
-        latin: "Al Malik",
-        arabic: "الْمَلِكُ",
-        translation_id: "Yang Memiliki Mutlak sifat Merajai/Memerintah",
-        translation_en: "The King, The Sovereign"
-    },
-    {
-        index: 4,
-        latin: "Al Quddus",
-        arabic: "الْقُدُّوسُ",
-        translation_id: "Yang Memiliki Mutlak sifat Suci",
-        translation_en: "The Most Holy"
-    },
-    {
-        index: 5,
-        latin: "As Salaam",
-        arabic: "السَّلاَمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Memberi Kesejahteraan",
-        translation_en: "Peace and Blessing"
-    },
-    {
-        index: 6,
-        latin: "Al Mu’min",
-        arabic: "الْمُؤْمِنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Memberi Keamanan",
-        translation_en: "The Guarantor"
-    },
-    {
-        index: 7,
-        latin: "Al Muhaimin",
-        arabic: "الْمُهَيْمِنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemelihara",
-        translation_en: "The Guardian, the Preserver"
-    },
-    {
-        index: 8,
-        latin: "Al ‘Aziiz",
-        arabic: "الْعَزِيزُ",
-        translation_id: "Yang Memiliki Mutlak Kegagahan",
-        translation_en: "The Almighty, the Self Sufficient"
-    },
-    {
-        index: 9,
-        latin: "Al Jabbar",
-        arabic: "الْجَبَّارُ",
-        translation_id: "Yang Memiliki Mutlak sifat Perkasa",
-        translation_en: "The Powerful, the Irresistible"
-    },
-    {
-        index: 10,
-        latin: "Al Mutakabbir",
-        arabic: "الْمُتَكَبِّرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Megah,Yang Memiliki Kebesaran",
-        translation_en: "The Tremendous"
-    },
-    {
-        index: 11,
-        latin: "Al Khaliq",
-        arabic: "الْخَالِقُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pencipta",
-        translation_en: "The Creator"
-    },
-    {
-        index: 12,
-        latin: "Al Baari’",
-        arabic: "الْبَارِئُ",
-        translation_id: "Yang Memiliki Mutlak sifat Yang Melepaskan(Membuat, Membentuk, Menyeimbangkan)",
-        translation_en: "The Maker"
-    },
-    {
-        index: 13,
-        latin: "Al Mushawwir",
-        arabic: "الْمُصَوِّرُ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMembentuk Rupa (makhluknya)",
-        translation_en: "The Fashioner of Forms"
-    },
-    {
-        index: 14,
-        latin: "Al Ghaffaar",
-        arabic: "الْغَفَّارُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pengampun",
-        translation_en: "The Ever Forgiving"
-    },
-    {
-        index: 15,
-        latin: "Al Qahhaar",
-        arabic: "الْقَهَّارُ",
-        translation_id: "Yang Memiliki Mutlak sifat Memaksa",
-        translation_en: "The All Compelling Subduer"
-    },
-    {
-        index: 16,
-        latin: "Al Wahhaab",
-        arabic: "الْوَهَّابُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemberi Karunia",
-        translation_en: "The Bestower"
-    },
-    {
-        index: 17,
-        latin: "Ar Razzaaq",
-        arabic: "الرَّزَّاقُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemberi Rejeki",
-        translation_en: "The Ever Providing"
-    },
-    {
-        index: 18,
-        latin: "Al Fattaah",
-        arabic: "الْفَتَّاحُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pembuka Rahmat",
-        translation_en: "The Opener, the Victory Giver"
-    },
-    {
-        index: 19,
-        latin: "Al ‘Aliim",
-        arabic: "اَلْعَلِيْمُ",
-        translation_id: "Yang Memiliki Mutlak sifatMengetahui (Memiliki Ilmu)",
-        translation_en: "The All Knowing, the Omniscient"
-    },
-    {
-        index: 20,
-        latin: "Al Qaabidh",
-        arabic: "الْقَابِضُ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMenyempitkan (makhluknya)",
-        translation_en: "The Restrainer, the Straightener"
-    },
-    {
-        index: 21,
-        latin: "Al Baasith",
-        arabic: "الْبَاسِطُ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMelapangkan (makhluknya)",
-        translation_en: "The Expander, the Munificent"
-    },
-    {
-        index: 22,
-        latin: "Al Khaafidh",
-        arabic: "الْخَافِضُ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMerendahkan (makhluknya)",
-        translation_en: "The Abaser"
-    },
-    {
-        index: 23,
-        latin: "Ar Raafi’",
-        arabic: "الرَّافِعُ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMeninggikan (makhluknya)",
-        translation_en: "The Exalter"
-    },
-    {
-        index: 24,
-        latin: "Al Mu’izz",
-        arabic: "الْمُعِزُّ",
-        translation_id: "Yang Memiliki Mutlak sifat YangMemuliakan (makhluknya)",
-        translation_en: "The Giver of Honor"
-    },
-    {
-        index: 25,
-        latin: "Al Mudzil",
-        arabic: "المُذِلُّ",
-        translation_id: "Yang Memiliki Mutlak sifatYang Menghinakan (makhluknya)",
-        translation_en: "The Giver of Dishonor"
-    },
-    {
-        index: 26,
-        latin: "Al Samii’",
-        arabic: "السَّمِيعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mendengar",
-        translation_en: "The All Hearing"
-    },
-    {
-        index: 27,
-        latin: "Al Bashiir",
-        arabic: "الْبَصِيرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Melihat",
-        translation_en: "The All Seeing"
-    },
-    {
-        index: 28,
-        latin: "Al Hakam",
-        arabic: "الْحَكَمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Menetapkan",
-        translation_en: "The Judge, the Arbitrator"
-    },
-    {
-        index: 29,
-        latin: "Al ‘Adl",
-        arabic: "الْعَدْلُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Adil",
-        translation_en: "The Utterly Just"
-    },
-    {
-        index: 30,
-        latin: "Al Lathiif",
-        arabic: "اللَّطِيفُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Lembut",
-        translation_en: "The Subtly Kind"
-    },
-    {
-        index: 31,
-        latin: "Al Khabiir",
-        arabic: "الْخَبِيرُ",
-        translation_id: "Yang Memiliki Mutlak sifatMaha Mengetahui Rahasia",
-        translation_en: "The All Aware"
-    },
-    {
-        index: 32,
-        latin: "Al Haliim",
-        arabic: "الْحَلِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Penyantun",
-        translation_en: "The Forbearing, the Indulgent"
-    },
-    {
-        index: 33,
-        latin: "Al ‘Azhiim",
-        arabic: "الْعَظِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Agung",
-        translation_en: "The Magnificent, the Infinite"
-    },
-    {
-        index: 34,
-        latin: "Al Ghafuur",
-        arabic: "الْغَفُورُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pengampun",
-        translation_en: "The All Forgiving"
-    },
-    {
-        index: 35,
-        latin: "As Syakuur",
-        arabic: "الشَّكُورُ",
-        translation_id: "Yang Memiliki Mutlak sifat MahaPembalas Budi (Menghargai)",
-        translation_en: "The Grateful"
-    },
-    {
-        index: 36,
-        latin: "Al ‘Aliy",
-        arabic: "الْعَلِيُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Tinggi",
-        translation_en: "The Sublimely Exalted"
-    },
-    {
-        index: 37,
-        latin: "Al Kabiir",
-        arabic: "الْكَبِيرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Besar",
-        translation_en: "The Great"
-    },
-    {
-        index: 38,
-        latin: "Al Hafizh",
-        arabic: "الْحَفِيظُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Menjaga",
-        translation_en: "The Preserver"
-    },
-    {
-        index: 39,
-        latin: "Al Muqiit",
-        arabic: "المُقيِت",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pemberi Kecukupan",
-        translation_en: "The Nourisher"
-    },
-    {
-        index: 40,
-        latin: "Al Hasiib",
-        arabic: "الْحسِيبُ",
-        translation_id: "Yang Memiliki Mutlak sifat MahaMembuat Perhitungan",
-        translation_en: "The Reckoner"
-    },
-    {
-        index: 41,
-        latin: "Al Jaliil",
-        arabic: "الْجَلِيلُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mulia",
-        translation_en: "The Majestic"
-    },
-    {
-        index: 42,
-        latin: "Al Kariim",
-        arabic: "الْكَرِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pemurah",
-        translation_en: "The Bountiful, the Generous"
-    },
-    {
-        index: 43,
-        latin: "Ar Raqiib",
-        arabic: "الرَّقِيبُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mengawasi",
-        translation_en: "The Watchful"
-    },
-    {
-        index: 44,
-        latin: "Al Mujiib",
-        arabic: "الْمُجِيبُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mengabulkan",
-        translation_en: "The Responsive, the Answerer"
-    },
-    {
-        index: 45,
-        latin: "Al Waasi’",
-        arabic: "الْوَاسِعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Luas",
-        translation_en: "The Vast, the All Encompassing"
-    },
-    {
-        index: 46,
-        latin: "Al Hakiim",
-        arabic: "الْحَكِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maka Bijaksana",
-        translation_en: "The Wise"
-    },
-    {
-        index: 47,
-        latin: "Al Waduud",
-        arabic: "الْوَدُودُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pencinta",
-        translation_en: "The Loving, the Kind One"
-    },
-    {
-        index: 48,
-        latin: "Al Majiid",
-        arabic: "الْمَجِيدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mulia",
-        translation_en: "The All Glorious"
-    },
-    {
-        index: 49,
-        latin: "Al Baa’its",
-        arabic: "الْبَاعِثُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Membangkitkan",
-        translation_en: "The Raiser of the Dead"
-    },
-    {
-        index: 50,
-        latin: "As Syahiid",
-        arabic: "الشَّهِيدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Menyaksikan",
-        translation_en: "The Witness"
-    },
-    {
-        index: 51,
-        latin: "Al Haqq",
-        arabic: "الْحَقُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Benar",
-        translation_en: "The Truth, the Real"
-    },
-    {
-        index: 52,
-        latin: "Al Wakiil",
-        arabic: "الْوَكِيلُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memelihara",
-        translation_en: "The Trustee, the Dependable"
-    },
-    {
-        index: 53,
-        latin: "Al Qawiyyu",
-        arabic: "الْقَوِيُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Kuat",
-        translation_en: "The Strong"
-    },
-    {
-        index: 54,
-        latin: "Al Matiin",
-        arabic: "الْمَتِينُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Kokoh",
-        translation_en: "The Firm, the Steadfast"
-    },
-    {
-        index: 55,
-        latin: "Al Waliyy",
-        arabic: "الْوَلِيُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Melindungi",
-        translation_en: "The Protecting Friend, Patron, and Helper"
-    },
-    {
-        index: 56,
-        latin: "Al Hamiid",
-        arabic: "الْحَمِيدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Terpuji",
-        translation_en: "The All Praiseworthy"
-    },
-    {
-        index: 57,
-        latin: "Al Mushii",
-        arabic: "الْمُحْصِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mengkalkulasi",
-        translation_en: "The Accounter, the Numberer of All"
-    },
-    {
-        index: 58,
-        latin: "Al Mubdi’",
-        arabic: "الْمُبْدِئُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memulai",
-        translation_en: "The Producer, Originator, and Initiator of all"
-    },
-    {
-        index: 59,
-        latin: "Al Mu’iid",
-        arabic: "الْمُعِيدُ",
-        translation_id: "Yang Memiliki Mutlak sifat MahaMengembalikan Kehidupan",
-        translation_en: "The Reinstater Who Brings Back All"
-    },
-    {
-        index: 60,
-        latin: "Al Muhyii",
-        arabic: "الْمُحْيِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Menghidupkan",
-        translation_en: "The Giver of Life"
-    },
-    {
-        index: 61,
-        latin: "Al Mumiitu",
-        arabic: "اَلْمُمِيتُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mematikan",
-        translation_en: "The Bringer of Death, the Destroyer"
-    },
-    {
-        index: 62,
-        latin: "Al Hayyu",
-        arabic: "الْحَيُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Hidup",
-        translation_en: "The Ever Living"
-    },
-    {
-        index: 63,
-        latin: "Al Qayyuum",
-        arabic: "الْقَيُّومُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mandiri",
-        translation_en: "The Self Subsisting Sustainer of All"
-    },
-    {
-        index: 64,
-        latin: "Al Waajid",
-        arabic: "الْوَاجِدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Penemu",
-        translation_en: "The Perceiver, the Finder, the Unfailing"
-    },
-    {
-        index: 65,
-        latin: "Al Maajid",
-        arabic: "الْمَاجِدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mulia",
-        translation_en: "The Illustrious, the Magnificent"
-    },
-    {
-        index: 66,
-        latin: "Al Wahiid",
-        arabic: "الْواحِدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Tunggal",
-        translation_en: "The One, The Unique, Manifestation of Unity"
-    },
-    {
-        index: 67,
-        latin: "Al ‘Ahad",
-        arabic: "اَلاَحَدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Esa",
-        translation_en: "The One, the All Inclusive, the Indivisible"
-    },
-    {
-        index: 68,
-        latin: "As Shamad",
-        arabic: "الصَّمَدُ",
-        translation_id: "Yang Memiliki Mutlak sifat MahaDibutuhkan, Tempat Meminta",
-        translation_en: "The Self Sufficient, the Impregnable,the Eternally Besought of All, the Everlasting"
-    },
-    {
-        index: 69,
-        latin: "Al Qaadir",
-        arabic: "الْقَادِرُ",
-        translation_id: "Yang Memiliki Mutlak sifat MahaMenentukan, Maha Menyeimbangkan",
-        translation_en: "The All Able"
-    },
-    {
-        index: 70,
-        latin: "Al Muqtadir",
-        arabic: "الْمُقْتَدِرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Berkuasa",
-        translation_en: "The All Determiner, the Dominant"
-    },
-    {
-        index: 71,
-        latin: "Al Muqaddim",
-        arabic: "الْمُقَدِّمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mendahulukan",
-        translation_en: "The Expediter, He who brings forward"
-    },
-    {
-        index: 72,
-        latin: "Al Mu’akkhir",
-        arabic: "الْمُؤَخِّرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mengakhirkan",
-        translation_en: "The Delayer, He who puts far away"
-    },
-    {
-        index: 73,
-        latin: "Al Awwal",
-        arabic: "الأوَّلُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Awal",
-        translation_en: "The First"
-    },
-    {
-        index: 74,
-        latin: "Al Aakhir",
-        arabic: "الآخِرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Akhir",
-        translation_en: "The Last"
-    },
-    {
-        index: 75,
-        latin: "Az Zhaahir",
-        arabic: "الظَّاهِرُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Nyata",
-        translation_en: "The Manifest; the All Victorious"
-    },
-    {
-        index: 76,
-        latin: "Al Baathin",
-        arabic: "الْبَاطِنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Ghaib",
-        translation_en: "The Hidden; the All Encompassing"
-    },
-    {
-        index: 77,
-        latin: "Al Waali",
-        arabic: "الْوَالِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memerintah",
-        translation_en: "The Patron"
-    },
-    {
-        index: 78,
-        latin: "Al Muta’aalii",
-        arabic: "الْمُتَعَالِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Tinggi",
-        translation_en: "The Self Exalted"
-    },
-    {
-        index: 79,
-        latin: "Al Barri",
-        arabic: "الْبَرُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Penderma",
-        translation_en: "The Most Kind and Righteous"
-    },
-    {
-        index: 80,
-        latin: "At Tawwaab",
-        arabic: "التَّوَابُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Penerima Tobat",
-        translation_en: "The Ever Returning, Ever Relenting"
-    },
-    {
-        index: 81,
-        latin: "Al Muntaqim",
-        arabic: "الْمُنْتَقِمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Penuntut Balas",
-        translation_en: "The Avenger"
-    },
-    {
-        index: 82,
-        latin: "Al Afuww",
-        arabic: "العَفُوُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pemaaf",
-        translation_en: "The Pardoner, the Effacer of Sins"
-    },
-    {
-        index: 83,
-        latin: "Ar Ra`uuf",
-        arabic: "الرَّؤُوفُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pengasih",
-        translation_en: "The Compassionate, the All Pitying"
-    },
-    {
-        index: 84,
-        latin: "Malikul Mulk",
-        arabic: "مَالِكُ الْمُلْكِ",
-        translation_id: "Yang Memiliki Mutlak sifatPenguasa Kerajaan (Semesta)",
-        translation_en: "The Owner of All Sovereignty"
-    },
-    {
-        index: 85,
-        latin: "Dzul JalaaliWal Ikraam",
-        arabic: "ذُوالْجَلاَلِوَالإكْرَامِ",
-        translation_id: "Yang Memiliki Mutlak sifat PemilikKebesaran dan Kemuliaan",
-        translation_en: "The Lord of Majesty and Generosity"
-    },
-    {
-        index: 86,
-        latin: "Al Muqsith",
-        arabic: "الْمُقْسِطُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Adil",
-        translation_en: "The Equitable, the Requiter"
-    },
-    {
-        index: 87,
-        latin: "Al Jamii’",
-        arabic: "الْجَامِعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mengumpulkan",
-        translation_en: "The Gatherer, the Unifier"
-    },
-    {
-        index: 88,
-        latin: "Al Ghaniyy",
-        arabic: "الْغَنِيُّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Berkecukupan",
-        translation_en: "The All Rich, the Independent"
-    },
-    {
-        index: 89,
-        latin: "Al Mughnii",
-        arabic: "الْمُغْنِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memberi Kekayaan",
-        translation_en: "The Enricher, the Emancipator"
-    },
-    {
-        index: 90,
-        latin: "Al Maani",
-        arabic: "اَلْمَانِعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Mencegah",
-        translation_en: "The Withholder, the Shielder, the Defender"
-    },
-    {
-        index: 91,
-        latin: "Ad Dhaar",
-        arabic: "الضَّارَّ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memberi Derita",
-        translation_en: "The Distressor, the Harmer"
-    },
-    {
-        index: 92,
-        latin: "An Nafii’",
-        arabic: "النَّافِعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Memberi Manfaat",
-        translation_en: "The Propitious, the Benefactor"
-    },
-    {
-        index: 93,
-        latin: "An Nuur",
-        arabic: "النُّورُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Bercahaya(Menerangi, Memberi Cahaya)",
-        translation_en: "The Light"
-    },
-    {
-        index: 94,
-        latin: "Al Haadii",
-        arabic: "الْهَادِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pemberi Petunjuk",
-        translation_en: "The Guide"
-    },
-    {
-        index: 95,
-        latin: "Al Baadii",
-        arabic: "الْبَدِيعُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pencipta",
-        translation_en: "Incomparable, the Originator"
-    },
-    {
-        index: 96,
-        latin: "Al Baaqii",
-        arabic: "اَلْبَاقِي",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Kekal",
-        translation_en: "The Ever Enduring and Immutable"
-    },
-    {
-        index: 97,
-        latin: "Al Waarits",
-        arabic: "الْوَارِثُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pewaris",
-        translation_en: "The Heir, the Inheritor of All"
-    },
-    {
-        index: 98,
-        latin: "Ar Rasyiid",
-        arabic: "الرَّشِيدُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Pandai",
-        translation_en: "The Guide, Infallible Teacher, and Knower"
-    },
-    {
-        index: 99,
-        latin: "As Shabuur",
-        arabic: "الصَّبُورُ",
-        translation_id: "Yang Memiliki Mutlak sifat Maha Sabar",
-        translation_en: "The Patient"
-    }
-]
+global.asmaulhusna99 = `
+Ar Rahman,
+الرَّحْمَنُ
+Yang Maha Pemurah,
+The All Beneficent
+
+
+Ar Rahiim,
+الرَّحِيمُ
+Yang Maha Penyayang,
+The Most Merciful
+
+
+Al Malik,
+الْمَلِكُ
+Yang Maha Merajai/Memerintah,
+The King, The Sovereign
+
+
+Al Quddus,
+الْقُدُّوسُ
+Yang Maha Suci,
+The Most Holy
+
+
+As Salaam,
+السَّلاَمُ,
+Yang Maha Memberi Kesejahteraan,
+Peace and Blessing
+
+
+Al Mu’min,
+الْمُؤْمِنُ
+Yang Maha Memberi Keamanan,
+The Guarantor
+
+
+Al Muhaimin,
+الْمُهَيْمِنُ
+Yang Maha Pemelihara,
+The Guardian, the Preserver
+
+
+Al ‘Aziiz,
+الْعَزِيزُ
+Yang Maha Perkasa,
+The Almighty, the Self Sufficient
+
+
+Al Jabbar,
+الْجَبَّارُ
+Yang Memiliki Mutlak Kegagahan,
+The Powerful, the Irresistible
+
+
+Al Mutakabbir,
+الْمُتَكَبِّرُ
+Yang Maha Megah, Yang Memiliki Kebesaran,
+The Tremendous
+
+
+Al Khaliq,
+الْخَالِقُ
+Yang Maha Pencipta,
+The Creator
+
+
+Al Baari’,
+الْبَارِئُ
+Yang Maha Melepaskan(Membuat, Membentuk, Menyeimbangkan),
+The Maker
+
+
+Al Mushawwir,
+الْمُصَوِّرُ
+Yang Maha Membentuk Rupa (makhluknya),
+The Fashioner of Forms
+
+
+Al Ghaffaar,
+الْغَفَّارُ
+Yang Maha Pengampun,
+The Ever Forgiving
+
+
+Al Qahhaar,
+الْقَهَّارُ
+Yang Maha Memaksa,
+The All Compelling Subduer
+
+
+Al Wahhaab,
+الْوَهَّابُ,
+Yang Maha Pemberi Karunia,
+The Bestower
+
+
+Ar Razzaaq,
+الرَّزَّاقُ
+Yang Maha Pemberi Rejeki,
+The Ever Providing
+
+
+Al Fattaah,
+الْفَتَّاحُ
+Yang Maha Pembuka Rahmat,
+The Opener, the Victory Giver
+
+
+Al ‘Aliim,
+اَلْعَلِيْمُ
+Yang Maha Mengetahui (Memiliki Ilmu),
+The All Knowing, the Omniscient
+
+
+Al Qaabidh,
+الْقَابِضُ
+Yang Maha YangMenyempitkan (makhluknya),
+The Restrainer, the Straightener
+
+
+Al Baasith,
+الْبَاسِطُ
+Yang Maha YangMelapangkan (makhluknya),
+The Expander, the Munificent
+
+
+Al Khaafidh,
+الْخَافِضُ
+Yang Maha YangMerendahkan (makhluknya),
+The Abaser
+
+
+Ar Raafi’,
+الرَّافِعُ
+Yang Maha Meninggikan (makhluknya),
+The Exalter
+
+
+Al Mu’izz,
+الْمُعِزُّ
+Yang Maha Memuliakan (makhluknya),
+The Giver of Honor
+
+
+Al Mudzil,
+المُذِلُّ
+Yang Maha Menghinakan (makhluknya),
+The Giver of Dishonor
+
+
+Al Samii’,
+السَّمِيعُ
+Yang Maha Mendengar,
+The All Hearing
+
+
+Al Bashiir,
+الْبَصِيرُ
+Yang Maha Melihat,
+The All Seeing
+
+
+Al Hakam,
+الْحَكَمُ,
+Yang Maha Menetapkan,
+The Judge, the Arbitrator
+
+
+Al ‘Adl,
+الْعَدْلُ
+Yang Maha Adil,
+The Utterly Just
+
+
+Al Lathiif,
+اللَّطِيفُ
+Yang Maha Lembut,
+The Subtly Kind
+
+
+Al Khabiir,
+الْخَبِيرُ
+Yang Maha Mengetahui Rahasia,
+The All Aware
+
+
+Al Haliim,
+الْحَلِيمُ
+Yang Maha Penyantun,
+The Forbearing, the Indulgent
+
+
+Al ‘Azhiim,
+الْعَظِيمُ
+Yang Maha Agung,
+The Magnificent, the Infinite
+
+
+Al Ghafuur,
+الْغَفُورُ
+Yang Maha Pengampun,
+The All Forgiving
+
+
+As Syakuur,
+الشَّكُورُ
+Yang Maha Pembalas Budi (Menghargai),
+The Grateful
+
+
+Al ‘Aliy,
+الْعَلِيُّ
+Yang Maha Tinggi,
+The Sublimely Exalted
+
+
+Al Kabiir,
+الْكَبِيرُ
+Yang Maha Besar,
+The Great
+
+
+Al Hafizh,
+الْحَفِيظُ
+Yang Maha Menjaga,
+The Preserver
+
+
+Al Muqiit,
+المُقيِت
+Yang Maha Pemberi Kecukupan,
+The Nourisher
+
+
+Al Hasiib,
+الْحسِيبُ
+Yang Maha Membuat Perhitungan,
+The Reckoner
+
+
+Al Jaliil,
+الْجَلِيلُ
+Yang Maha Mulia,
+The Majestic
+
+
+Al Kariim,
+الْكَرِيمُ
+Yang Maha Pemurah,
+The Bountiful, the Generous
+
+
+Ar Raqiib,
+الرَّقِيبُ
+Yang Maha Mengawasi,
+The Watchful
+
+
+Al Mujiib,
+الْمُجِيبُ
+Yang Maha Mengabulkan,
+The Responsive, the Answerer
+
+
+Al Waasi’,
+الْوَاسِعُ
+Yang Maha Luas,
+The Vast, the All Encompassing
+
+
+Al Hakiim,
+الْحَكِيمُ
+Yang Maha Bijaksana,
+The Wise
+
+
+Al Waduud,
+الْوَدُودُ
+Yang Maha Mencintai,
+The Loving, the Kind One
+
+
+Al Majiid,
+الْمَجِيدُ
+Yang Maha Mulia,
+The All Glorious
+
+
+Al Baa’its,
+الْبَاعِثُ
+Yang Maha Membangkitkan,
+The Raiser of the Dead
+
+
+As Syahiid,
+الشَّهِيدُ
+Yang Maha Menyaksikan,
+The Witness
+
+
+Al Haqq,
+الْحَقُّ
+Yang Maha Benar,
+The Truth, the Real
+
+
+Al Wakiil,
+الْوَكِيلُ
+Yang Maha Memelihara,
+The Trustee, the Dependable
+
+
+Al Qawiyyu,
+الْقَوِيُّ
+Yang Maha Kuat,
+The Strong
+
+
+Al Matiin,
+الْمَتِينُ
+Yang Maha Kokoh,
+The Firm, the Steadfast
+
+
+Al Waliyy,
+الْوَلِيُّ
+Yang Maha Melindungi,
+The Protecting Friend, Patron, and Helper
+
+
+Al Hamiid,
+الْحَمِيدُ
+Yang Maha Terpuji,
+The All Praiseworthy
+
+
+Al Muhshii,
+الْمُحْصِي
+Yang Maha MMengkalkulasi(Menghitung segala sesuatu),
+The Accounter, the Numberer of All
+
+
+Al Mubdi’,
+الْمُبْدِئُ
+Yang Maha Memulai,
+The Producer, Originator, and Initiator of all
+
+
+Al Mu’iid,
+الْمُعِيدُ
+Yang Maha Mengembalikan Kehidupan,
+The Reinstater Who Brings Back All
+
+
+Al Muhyii,
+الْمُحْيِي
+Yang Maha Menghidupkan,
+The Giver of Life
+
+
+Al Mumiitu,
+اَلْمُمِيتُ
+Yang Maha Mematikan,
+The Bringer of Death, the Destroyer
+
+
+Al Hayyu,
+الْحَيُّ
+Yang Maha Hidup,
+The Ever Living
+
+
+Al Qayyuum,
+الْقَيُّومُ
+Yang Maha Mandiri,
+The Self Subsisting Sustainer of All
+
+
+Al Waajid,
+الْوَاجِدُ
+Yang Maha Penemu,
+The Perceiver, the Finder, the Unfailing
+
+
+Al Maajid,
+الْمَاجِدُ
+Yang Maha Mulia,
+The Illustrious, the Magnificent
+
+
+Al Wahiid,
+الْواحِدُ
+Yang Maha Tunggal,
+The One, The Unique, Manifestation of Unity
+
+
+Al ‘Ahad,
+اَلاَحَدُ
+Yang Maha Esa,
+The One, the All Inclusive, the Indivisible
+
+
+As Shamad,
+الصَّمَدُ
+Yang Maha Dibutuhkan, Tempat Meminta,
+The Self Sufficient, the Impregnable,the Eternally Besought of All, the Everlasting
+
+
+Al Qaadir,
+الْقَادِرُ
+Yang Maha Menentukan, Maha Menyeimbangkan,
+The All Able
+
+
+Al Muqtadir,
+الْمُقْتَدِرُ
+Yang Maha Berkuasa,
+The All Determiner, the Dominant
+
+
+Al Muqaddim,
+الْمُقَدِّمُ
+Yang Maha Mendahulukan,
+The Expediter, He who brings forward
+
+
+Al Mu’akkhir,
+الْمُؤَخِّرُ
+Yang Maha Mengakhirkan,
+The Delayer, He who puts far away
+
+
+Al Awwal,
+الأوَّلُ
+Yang Maha Awal,
+The First
+
+
+Al Aakhir,
+الآخِرُ
+Yang Maha Akhir,
+The Last
+
+
+Az Zhaahir,
+الظَّاهِرُ
+Yang Maha Nyata,
+The Manifest; The All Victorious
+
+
+Al Baathin,
+الْبَاطِنُ
+Yang Maha Ghaib,
+The Hidden; The All Encompassing
+
+
+Al Waali,
+الْوَالِي
+Yang Maha Memerintah,
+The Patron
+
+
+Al Muta’aalii,
+الْمُتَعَالِي
+Yang Maha Tinggi,
+The Self Exalted
+
+
+Al Barri,
+الْبَرُّ
+Yang Maha Penderma,
+The Most Kind and Righteous
+
+
+At Tawwaab,
+التَّوَابُ
+Yang Maha Penerima Tobat,
+The Ever Returning, Ever Relenting
+
+
+Al Muntaqim,
+الْمُنْتَقِمُ,
+Yang Maha Penuntut Balas,
+The Avenger
+
+
+Al Afuww,
+العَفُوُّ
+Yang Maha Pemaaf,
+The Pardoner, The Effacer of Sins
+
+
+Ar Ra'uuf,
+الرَّؤُوفُ
+Yang Maha Pengasih,
+The Compassionate, The All Pitying
+
+
+Malikul Mulk,
+مَالِكُ الْمُلْكِ
+Yang Penguasa Kerajaan (Semesta),
+The Owner of All Sovereignty
+
+
+Dzul JalaaliWal Ikraam,
+ذُوالْجَلاَلِوَالإكْرَامِ
+Yang Maha Pemilik Kebesaran dan Kemuliaan,
+The Lord of Majesty and Generosity
+
+
+Al Muqsith,
+الْمُقْسِطُ
+Yang Maha Adil,
+The Equitable, the Requiter
+
+
+Al Jamii’,
+الْجَامِعُ
+Yang Maha Mengumpulkan,
+The Gatherer, the Unifier
+
+
+Al Ghaniyy,
+الْغَنِيُّ
+Yang Maha Berkecukupan,
+The All Rich, the Independent
+
+
+Al Mughnii,
+الْمُغْنِي
+Yang Maha Memberi Kekayaan,
+The Enricher, the Emancipator
+
+
+Al Maani,
+اَلْمَانِعُ
+Yang Maha Mencegah,
+The Withholder, the Shielder, the Defender
+
+
+Ad Dhaar,
+الضَّارَّ
+Yang Maha Memberi Derita,
+The Distressor, the Harmer
+
+
+An Nafii’,
+النَّافِعُ
+Yang Maha Memberi Manfaat,
+The Propitious, the Benefactor
+
+
+An Nuur,
+النُّورُ
+Yang Maha Bercahaya(Menerangi, Memberi Cahaya),
+The Light
+
+
+Al Haadii,
+الْهَادِي
+Yang Maha Pemberi Petunjuk,
+The Guide
+
+
+Al Baadii,
+الْبَدِيعُ
+Yang Maha Pencipta,
+Incomparable, the Originator
+
+
+Al Baaqii,
+اَلْبَاقِي
+Yang Maha Kekal,
+The Ever Enduring and Immutable
+
+
+Al Waarits,
+الْوَارِثُ
+Yang Maha Pewaris,
+The Heir, the Inheritor of All
+
+
+Ar Rasyiid,
+الرَّشِيدُ
+Yang Maha Pandai,
+The Guide, Infallible Teacher, and Knower
+
+
+As Shabuur,
+الصَّبُورُ
+Yang Maha Sabar,
+The Patient
+`;
+
+// global.asmaulhusna = [
+//
+//         Ar Rahman",
+//         الرَّحْمَنُ",
+//         Yang Memiliki Mutlak sifat Pemurah",
+//         The All Beneficent"
+//
+//
+//         Ar Rahiim",
+//         الرَّحِيمُ",
+//         Yang Memiliki Mutlak sifat Penyayang",
+//         The Most Merciful"
+//
+//
+//         Al Malik",
+//         الْمَلِكُ",
+//         Yang Memiliki Mutlak sifat Merajai/Memerintah",
+//         The King, The Sovereign"
+//
+//
+//         Al Quddus",
+//         الْقُدُّوسُ",
+//         Yang Memiliki Mutlak sifat Suci",
+//         The Most Holy"
+//
+//
+//         As Salaam",
+//         السَّلاَمُ",
+//         Yang Memiliki Mutlak sifat Memberi Kesejahteraan",
+//         Peace and Blessing"
+//
+//
+//         Al Mu’min",
+//         الْمُؤْمِنُ",
+//         Yang Memiliki Mutlak sifat Memberi Keamanan",
+//         The Guarantor"
+//
+//
+//         Al Muhaimin",
+//         الْمُهَيْمِنُ",
+//         Yang Memiliki Mutlak sifat Pemelihara",
+//         The Guardian, the Preserver"
+//
+//
+//         Al ‘Aziiz",
+//         الْعَزِيزُ",
+//         Yang Memiliki Mutlak Kegagahan",
+//         The Almighty, the Self Sufficient"
+//
+//
+//         Al Jabbar",
+//         الْجَبَّارُ",
+//         Yang Memiliki Mutlak sifat Perkasa",
+//         The Powerful, the Irresistible"
+//
+//
+//         Al Mutakabbir",
+//         الْمُتَكَبِّرُ",
+//         Yang Memiliki Mutlak sifat Megah,Yang Memiliki Kebesaran",
+//         The Tremendous"
+//
+//
+//         Al Khaliq",
+//         الْخَالِقُ",
+//         Yang Memiliki Mutlak sifat Pencipta",
+//         The Creator"
+//
+//
+//         Al Baari’",
+//         الْبَارِئُ",
+//         Yang Memiliki Mutlak sifat Yang Melepaskan(Membuat, Membentuk, Menyeimbangkan)",
+//         The Maker"
+//
+//
+//         Al Mushawwir",
+//         الْمُصَوِّرُ",
+//         Yang Memiliki Mutlak sifat YangMembentuk Rupa (makhluknya)",
+//         The Fashioner of Forms"
+//
+//
+//         Al Ghaffaar",
+//         الْغَفَّارُ",
+//         Yang Memiliki Mutlak sifat Pengampun",
+//         The Ever Forgiving"
+//
+//
+//         Al Qahhaar",
+//         الْقَهَّارُ",
+//         Yang Memiliki Mutlak sifat Memaksa",
+//         The All Compelling Subduer"
+//
+//
+//         Al Wahhaab",
+//         الْوَهَّابُ",
+//         Yang Memiliki Mutlak sifat Pemberi Karunia",
+//         The Bestower"
+//
+//
+//         Ar Razzaaq",
+//         الرَّزَّاقُ",
+//         Yang Memiliki Mutlak sifat Pemberi Rejeki",
+//         The Ever Providing"
+//
+//
+//         Al Fattaah",
+//         الْفَتَّاحُ",
+//         Yang Memiliki Mutlak sifat Pembuka Rahmat",
+//         The Opener, the Victory Giver"
+//
+//
+//         Al ‘Aliim",
+//         اَلْعَلِيْمُ",
+//         Yang Memiliki Mutlak sifatMengetahui (Memiliki Ilmu)",
+//         The All Knowing, the Omniscient"
+//
+//
+//         Al Qaabidh",
+//         الْقَابِضُ",
+//         Yang Memiliki Mutlak sifat YangMenyempitkan (makhluknya)",
+//         The Restrainer, the Straightener"
+//
+//
+//         Al Baasith",
+//         الْبَاسِطُ",
+//         Yang Memiliki Mutlak sifat YangMelapangkan (makhluknya)",
+//         The Expander, the Munificent"
+//
+//
+//         Al Khaafidh",
+//         الْخَافِضُ",
+//         Yang Memiliki Mutlak sifat YangMerendahkan (makhluknya)",
+//         The Abaser"
+//
+//
+//         Ar Raafi’",
+//         الرَّافِعُ",
+//         Yang Memiliki Mutlak sifat YangMeninggikan (makhluknya)",
+//         The Exalter"
+//
+//
+//         Al Mu’izz",
+//         الْمُعِزُّ",
+//         Yang Memiliki Mutlak sifat YangMemuliakan (makhluknya)",
+//         The Giver of Honor"
+//
+//
+//         Al Mudzil",
+//         المُذِلُّ",
+//         Yang Memiliki Mutlak sifatYang Menghinakan (makhluknya)",
+//         The Giver of Dishonor"
+//
+//
+//         Al Samii’",
+//         السَّمِيعُ",
+//         Yang Memiliki Mutlak sifat Maha Mendengar",
+//         The All Hearing"
+//
+//
+//         Al Bashiir",
+//         الْبَصِيرُ",
+//         Yang Memiliki Mutlak sifat Maha Melihat",
+//         The All Seeing"
+//
+//
+//         Al Hakam",
+//         الْحَكَمُ",
+//         Yang Memiliki Mutlak sifat Maha Menetapkan",
+//         The Judge, the Arbitrator"
+//
+//
+//         Al ‘Adl",
+//         الْعَدْلُ",
+//         Yang Memiliki Mutlak sifat Maha Adil",
+//         The Utterly Just"
+//
+//
+//         Al Lathiif",
+//         اللَّطِيفُ",
+//         Yang Memiliki Mutlak sifat Maha Lembut",
+//         The Subtly Kind"
+//
+//
+//         Al Khabiir",
+//         الْخَبِيرُ",
+//         Yang Memiliki Mutlak sifatMaha Mengetahui Rahasia",
+//         The All Aware"
+//
+//
+//         Al Haliim",
+//         الْحَلِيمُ",
+//         Yang Memiliki Mutlak sifat Maha Penyantun",
+//         The Forbearing, the Indulgent"
+//
+//
+//         Al ‘Azhiim",
+//         الْعَظِيمُ",
+//         Yang Memiliki Mutlak sifat Maha Agung",
+//         The Magnificent, the Infinite"
+//
+//
+//         Al Ghafuur",
+//         الْغَفُورُ",
+//         Yang Memiliki Mutlak sifat Maha Pengampun",
+//         The All Forgiving"
+//
+//
+//         As Syakuur",
+//         الشَّكُورُ",
+//         Yang Memiliki Mutlak sifat MahaPembalas Budi (Menghargai)",
+//         The Grateful"
+//
+//
+//         Al ‘Aliy",
+//         الْعَلِيُّ",
+//         Yang Memiliki Mutlak sifat Maha Tinggi",
+//         The Sublimely Exalted"
+//
+//
+//         Al Kabiir",
+//         الْكَبِيرُ",
+//         Yang Memiliki Mutlak sifat Maha Besar",
+//         The Great"
+//
+//
+//         Al Hafizh",
+//         الْحَفِيظُ",
+//         Yang Memiliki Mutlak sifat Maha Menjaga",
+//         The Preserver"
+//
+//
+//         Al Muqiit",
+//         المُقيِت",
+//         Yang Memiliki Mutlak sifat Maha Pemberi Kecukupan",
+//         The Nourisher"
+//
+//
+//         Al Hasiib",
+//         الْحسِيبُ",
+//         Yang Memiliki Mutlak sifat MahaMembuat Perhitungan",
+//         The Reckoner"
+//
+//
+//         Al Jaliil",
+//         الْجَلِيلُ",
+//         Yang Memiliki Mutlak sifat Maha Mulia",
+//         The Majestic"
+//
+//
+//         Al Kariim",
+//         الْكَرِيمُ",
+//         Yang Memiliki Mutlak sifat Maha Pemurah",
+//         The Bountiful, the Generous"
+//
+//
+//         Ar Raqiib",
+//         الرَّقِيبُ",
+//         Yang Memiliki Mutlak sifat Maha Mengawasi",
+//         The Watchful"
+//
+//
+//         Al Mujiib",
+//         الْمُجِيبُ",
+//         Yang Memiliki Mutlak sifat Maha Mengabulkan",
+//         The Responsive, the Answerer"
+//
+//
+//         Al Waasi’",
+//         الْوَاسِعُ",
+//         Yang Memiliki Mutlak sifat Maha Luas",
+//         The Vast, the All Encompassing"
+//
+//
+//         Al Hakiim",
+//         الْحَكِيمُ",
+//         Yang Memiliki Mutlak sifat Maka Bijaksana",
+//         The Wise"
+//
+//
+//         Al Waduud",
+//         الْوَدُودُ",
+//         Yang Memiliki Mutlak sifat Maha Pencinta",
+//         The Loving, the Kind One"
+//
+//
+//         Al Majiid",
+//         الْمَجِيدُ",
+//         Yang Memiliki Mutlak sifat Maha Mulia",
+//         The All Glorious"
+//
+//
+//         Al Baa’its",
+//         الْبَاعِثُ",
+//         Yang Memiliki Mutlak sifat Maha Membangkitkan",
+//         The Raiser of the Dead"
+//
+//
+//         As Syahiid",
+//         الشَّهِيدُ",
+//         Yang Memiliki Mutlak sifat Maha Menyaksikan",
+//         The Witness"
+//
+//
+//         Al Haqq",
+//         الْحَقُّ",
+//         Yang Memiliki Mutlak sifat Maha Benar",
+//         The Truth, the Real"
+//
+//
+//         Al Wakiil",
+//         الْوَكِيلُ",
+//         Yang Memiliki Mutlak sifat Maha Memelihara",
+//         The Trustee, the Dependable"
+//
+//
+//         Al Qawiyyu",
+//         الْقَوِيُّ",
+//         Yang Memiliki Mutlak sifat Maha Kuat",
+//         The Strong"
+//
+//
+//         Al Matiin",
+//         الْمَتِينُ",
+//         Yang Memiliki Mutlak sifat Maha Kokoh",
+//         The Firm, the Steadfast"
+//
+//
+//         Al Waliyy",
+//         الْوَلِيُّ",
+//         Yang Memiliki Mutlak sifat Maha Melindungi",
+//         The Protecting Friend, Patron, and Helper"
+//
+//
+//         Al Hamiid",
+//         الْحَمِيدُ",
+//         Yang Memiliki Mutlak sifat Maha Terpuji",
+//         The All Praiseworthy"
+//
+//
+//         Al Mushii",
+//         الْمُحْصِي",
+//         Yang Memiliki Mutlak sifat Maha Mengkalkulasi",
+//         The Accounter, the Numberer of All"
+//
+//
+//         Al Mubdi’",
+//         الْمُبْدِئُ",
+//         Yang Memiliki Mutlak sifat Maha Memulai",
+//         The Producer, Originator, and Initiator of all"
+//
+//
+//         Al Mu’iid",
+//         الْمُعِيدُ",
+//         Yang Memiliki Mutlak sifat MahaMengembalikan Kehidupan",
+//         The Reinstater Who Brings Back All"
+//
+//
+//         Al Muhyii",
+//         الْمُحْيِي",
+//         Yang Memiliki Mutlak sifat Maha Menghidupkan",
+//         The Giver of Life"
+//
+//
+//         Al Mumiitu",
+//         اَلْمُمِيتُ",
+//         Yang Memiliki Mutlak sifat Maha Mematikan",
+//         The Bringer of Death, the Destroyer"
+//
+//
+//         Al Hayyu",
+//         الْحَيُّ",
+//         Yang Memiliki Mutlak sifat Maha Hidup",
+//         The Ever Living"
+//
+//
+//         Al Qayyuum",
+//         الْقَيُّومُ",
+//         Yang Memiliki Mutlak sifat Maha Mandiri",
+//         The Self Subsisting Sustainer of All"
+//
+//
+//         Al Waajid",
+//         الْوَاجِدُ",
+//         Yang Memiliki Mutlak sifat Maha Penemu",
+//         The Perceiver, the Finder, the Unfailing"
+//
+//
+//         Al Maajid",
+//         الْمَاجِدُ",
+//         Yang Memiliki Mutlak sifat Maha Mulia",
+//         The Illustrious, the Magnificent"
+//
+//
+//         Al Wahiid",
+//         الْواحِدُ",
+//         Yang Memiliki Mutlak sifat Maha Tunggal",
+//         The One, The Unique, Manifestation of Unity"
+//
+//
+//         Al ‘Ahad",
+//         اَلاَحَدُ",
+//         Yang Memiliki Mutlak sifat Maha Esa",
+//         The One, the All Inclusive, the Indivisible"
+//
+//
+//         As Shamad",
+//         الصَّمَدُ",
+//         Yang Memiliki Mutlak sifat MahaDibutuhkan, Tempat Meminta",
+//         The Self Sufficient, the Impregnable,the Eternally Besought of All, the Everlasting"
+//
+//
+//         Al Qaadir",
+//         الْقَادِرُ",
+//         Yang Memiliki Mutlak sifat MahaMenentukan, Maha Menyeimbangkan",
+//         The All Able"
+//
+//
+//         Al Muqtadir",
+//         الْمُقْتَدِرُ",
+//         Yang Memiliki Mutlak sifat Maha Berkuasa",
+//         The All Determiner, the Dominant"
+//
+//
+//         Al Muqaddim",
+//         الْمُقَدِّمُ",
+//         Yang Memiliki Mutlak sifat Maha Mendahulukan",
+//         The Expediter, He who brings forward"
+//
+//
+//         Al Mu’akkhir",
+//         الْمُؤَخِّرُ",
+//         Yang Memiliki Mutlak sifat Maha Mengakhirkan",
+//         The Delayer, He who puts far away"
+//
+//
+//         Al Awwal",
+//         الأوَّلُ",
+//         Yang Memiliki Mutlak sifat Maha Awal",
+//         The First"
+//
+//
+//         Al Aakhir",
+//         الآخِرُ",
+//         Yang Memiliki Mutlak sifat Maha Akhir",
+//         The Last"
+//
+//
+//         Az Zhaahir",
+//         الظَّاهِرُ",
+//         Yang Memiliki Mutlak sifat Maha Nyata",
+//         The Manifest; the All Victorious"
+//
+//
+//         Al Baathin",
+//         الْبَاطِنُ",
+//         Yang Memiliki Mutlak sifat Maha Ghaib",
+//         The Hidden; the All Encompassing"
+//
+//
+//         Al Waali",
+//         الْوَالِي",
+//         Yang Memiliki Mutlak sifat Maha Memerintah",
+//         The Patron"
+//
+//
+//         Al Muta’aalii",
+//         الْمُتَعَالِي",
+//         Yang Memiliki Mutlak sifat Maha Tinggi",
+//         The Self Exalted"
+//
+//
+//         Al Barri",
+//         الْبَرُّ",
+//         Yang Memiliki Mutlak sifat Maha Penderma",
+//         The Most Kind and Righteous"
+//
+//
+//         At Tawwaab",
+//         التَّوَابُ",
+//         Yang Memiliki Mutlak sifat Maha Penerima Tobat",
+//         The Ever Returning, Ever Relenting"
+//
+//
+//         Al Muntaqim",
+//         الْمُنْتَقِمُ",
+//         Yang Memiliki Mutlak sifat Maha Penuntut Balas",
+//         The Avenger"
+//
+//
+//         Al Afuww",
+//         العَفُوُّ",
+//         Yang Memiliki Mutlak sifat Maha Pemaaf",
+//         The Pardoner, the Effacer of Sins"
+//
+//
+//         Ar Ra`uuf",
+//         الرَّؤُوفُ",
+//         Yang Memiliki Mutlak sifat Maha Pengasih",
+//         The Compassionate, the All Pitying"
+//
+//
+//         Malikul Mulk",
+//         مَالِكُ الْمُلْكِ",
+//         Yang Memiliki Mutlak sifatPenguasa Kerajaan (Semesta)",
+//         The Owner of All Sovereignty"
+//
+//
+//         Dzul JalaaliWal Ikraam",
+//         ذُوالْجَلاَلِوَالإكْرَامِ",
+//         Yang Memiliki Mutlak sifat PemilikKebesaran dan Kemuliaan",
+//         The Lord of Majesty and Generosity"
+//
+//
+//         Al Muqsith",
+//         الْمُقْسِطُ",
+//         Yang Memiliki Mutlak sifat Maha Adil",
+//         The Equitable, the Requiter"
+//
+//
+//         Al Jamii’",
+//         الْجَامِعُ",
+//         Yang Memiliki Mutlak sifat Maha Mengumpulkan",
+//         The Gatherer, the Unifier"
+//
+//
+//         Al Ghaniyy",
+//         الْغَنِيُّ",
+//         Yang Memiliki Mutlak sifat Maha Berkecukupan",
+//         The All Rich, the Independent"
+//
+//
+//         Al Mughnii",
+//         الْمُغْنِي",
+//         Yang Memiliki Mutlak sifat Maha Memberi Kekayaan",
+//         The Enricher, the Emancipator"
+//
+//
+//         Al Maani",
+//         اَلْمَانِعُ",
+//         Yang Memiliki Mutlak sifat Maha Mencegah",
+//         The Withholder, the Shielder, the Defender"
+//
+//
+//         Ad Dhaar",
+//         الضَّارَّ",
+//         Yang Memiliki Mutlak sifat Maha Memberi Derita",
+//         The Distressor, the Harmer"
+//
+//
+//         An Nafii’",
+//         النَّافِعُ",
+//         Yang Memiliki Mutlak sifat Maha Memberi Manfaat",
+//         The Propitious, the Benefactor"
+//
+//
+//         An Nuur",
+//         النُّورُ",
+//         Yang Memiliki Mutlak sifat Maha Bercahaya(Menerangi, Memberi Cahaya)",
+//         The Light"
+//
+//
+//         Al Haadii",
+//         الْهَادِي",
+//         Yang Memiliki Mutlak sifat Maha Pemberi Petunjuk",
+//         The Guide"
+//
+//
+//         Al Baadii",
+//         الْبَدِيعُ",
+//         Yang Memiliki Mutlak sifat Maha Pencipta",
+//         Incomparable, the Originator"
+//
+//
+//         Al Baaqii",
+//         اَلْبَاقِي",
+//         Yang Memiliki Mutlak sifat Maha Kekal",
+//         The Ever Enduring and Immutable"
+//
+//
+//         Al Waarits",
+//         الْوَارِثُ",
+//         Yang Memiliki Mutlak sifat Maha Pewaris",
+//         The Heir, the Inheritor of All"
+//
+//
+//         Ar Rasyiid",
+//         الرَّشِيدُ",
+//         Yang Memiliki Mutlak sifat Maha Pandai",
+//         The Guide, Infallible Teacher, and Knower"
+//
+//
+//         As Shabuur",
+//         الصَّبُورُ",
+//         Yang Memiliki Mutlak sifat Maha Sabar",
+//         The Patient"
+//     // ]

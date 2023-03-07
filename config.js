@@ -109,7 +109,7 @@ global.bottime = `⚛ 𝗧 𝗜 𝗠 𝗘 : ${wktuwib}`;
 global.titlebot = `Neutron Bot | By ${global.nameown}`;
 global.author = "Arya Sukresno";
 global.packname = "Neutron Bot";
-global.danied = "✘ 𝗘𝗥𝗢𝗥 𝟰𝟬𝟰";
+global.denied = "⚠ 𝗘𝗥𝗥𝗢𝗥 𝟰𝟬𝟬";
 global.ultahowner = "9 Oktober";
 
 /*============== LOGO ==============*/

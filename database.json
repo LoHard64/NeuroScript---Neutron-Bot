@@ -105735,7 +105735,7 @@
       "catexp": 0
     },
     "6281212448859@s.whatsapp.net": {
-      "exp": 3089,
+      "exp": 3521,
       "limit": 20,
       "lastclaim": 0,
       "registered": true,
@@ -105747,7 +105747,7 @@
       "haus": 100,
       "laper": 100,
       "stamina": 100,
-      "pc": 1678101737991,
+      "pc": 1678193283620,
       "joinlimit": 1,
       "coin": 0,
       "age": 29,
@@ -106138,7 +106138,7 @@
       "premiumTime": 0
     },
     "6285871592840@s.whatsapp.net": {
-      "exp": 49,
+      "exp": 68,
       "limit": 20,
       "lastclaim": 0,
       "registered": false,
@@ -109840,6 +109840,46 @@
       "premnsfw": false,
       "latestNews": [],
       "lastAnime": []
+    },
+    "120363042681271084@g.us": {
+      "isBanned": false,
+      "welcome": false,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiLink": false,
+      "antiSticker": false,
+      "viewonce": false,
+      "antiBadword": false,
+      "simi": false,
+      "expired": 0,
+      "nsfw": false,
+      "premnsfw": false,
+      "latestNews": [],
+      "lastAnime": []
+    },
+    "120363023356408692@g.us": {
+      "isBanned": false,
+      "welcome": false,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiLink": false,
+      "antiSticker": false,
+      "viewonce": false,
+      "antiBadword": false,
+      "simi": false,
+      "expired": 0,
+      "nsfw": false,
+      "premnsfw": false,
+      "latestNews": [],
+      "lastAnime": []
     }
   },
   "stats": {
@@ -110162,10 +110202,10 @@
       "lastSuccess": 1672194438973
     },
     "group-add.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1673008993638,
-      "lastSuccess": 1673008993638
+      "total": 21,
+      "success": 11,
+      "last": 1678203708092,
+      "lastSuccess": 1678200743823
     },
     "rpg-shop.js": {
       "total": 41,
@@ -110840,10 +110880,10 @@
       "lastSuccess": 1677168238255
     },
     "menu-awal.js": {
-      "total": 383,
-      "success": 364,
-      "last": 1678117708829,
-      "lastSuccess": 1678117708829
+      "total": 384,
+      "success": 365,
+      "last": 1678200776847,
+      "lastSuccess": 1678200776847
     },
     "main-menu.js": {
       "total": 269,
@@ -111572,16 +111612,22 @@
       "lastSuccess": 1677379714466
     },
     "asmaulhusna.js": {
-      "total": 6,
-      "success": 2,
-      "last": 1678118582145,
-      "lastSuccess": 1678118582145
+      "total": 10,
+      "success": 5,
+      "last": 1678198404082,
+      "lastSuccess": 1678198404082
     },
     "islam-jadwalsholat.js": {
       "total": 3,
       "success": 1,
       "last": 1678118621142,
       "lastSuccess": 1678118621142
+    },
+    "islam-asmaulhusna.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1678193606427,
+      "lastSuccess": 0
     }
   },
   "msgs": {},
@@ -111630,7 +111676,7 @@
       "restrict": true,
       "autorestart": true,
       "restartDB": 0,
-      "status": 1678118620003,
+      "status": 1678203647850,
       "anticall": true,
       "clear": true,
       "clearTime": 0,
